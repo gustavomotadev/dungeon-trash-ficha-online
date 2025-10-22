@@ -1,81 +1,94 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Dungeon Trash</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dungeon Trash</title>
 
-  <!-- Bootstrap 5 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="styles.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles2.css">
 </head>
-<body class="bg-dark text-center text-light py-4">
 
-  <header class="mb-4">
-    <h1 class="text-warning fw-bold">ĐuNGEøN_†ʀash</h1>
-    <p class="text-pink small">
-      Sobreviva à podridão em um mundo devastado pela poluição em Dungeon Trash.<br>
-      Um hack de Mörk Borg com regras leves, porém fatais.
-    </p>
-  </header>
+<body class="container-md bg-custom-gradient text-center p-3 d-flex flex-column">
 
-  <main class="container d-flex justify-content-center">
-    <div class="card ficha p-4 rounded-4 shadow-lg">
-
-      <!-- Cabeçalho -->
-      <div class="bg-pink text-white rounded-pill py-2 mb-3">
-        <div class="fw-bold fs-3">＋</div>
-        <h2 class="text-primary fw-bold mt-2">HAbiLiĐades</h2>
-      </div>
-
-      <!-- Habilidades -->
-      <div class="text-dark mb-4">
-        <p class="fw-bold fs-5">AGiLiDade <span class="text-success">[0]</span></p>
-        <p class="fw-bold fs-5">FísiCo <span class="text-success">[1]</span></p>
-        <p class="fw-bold fs-5">MeNtaL <span class="text-success">[0]</span></p>
-      </div>
-
-      <!-- Pontos de Vida -->
-      <div class="bg-blue text-cyan py-3 mb-3 rounded">
-        <p class="m-0 fw-bold">PonTØs de ViĐa &gt;</p>
-        <p class="fs-2 fw-bold m-0">[6]</p>
-      </div>
-
-      <!-- Carga -->
-      <div class="bg-black text-pink p-3 d-flex justify-content-around align-items-center mb-4 rounded">
-        <div class="fs-2 fw-bold">[11]</div>
-        <div class="text-start">
-          <p class="fw-bold mb-0">CaPAciDaDe de CARGa</p>
-          <small>Sujeito a penalidade progressiva ao ultrapassar a carga.<br>Máximo(22)</small>
+    <header class="row mb-3 d-flex justify-content-center">
+        <div class="col-12 col-lg-8 col-xl-6">
+            <h1 class="text-yellow fw-bold fs-1 m-0 mb-3">Dungeon Trash</h1>
+            <p class="text-magenta fs-6 m-0">
+                Sobreviva à podridão em um mundo devastado pela poluição em Dungeon Trash. Um hack de Mork borg com regras
+                leves, porém fatal. Confira mais informações em <a
+                    href="https://www.instagram.com/dungeons.e.dados">Dungeons & Dados</a>.
+            </p>
         </div>
-      </div>
+    </header>
 
-      <!-- Inventário -->
-      <div class="text-dark">
-        <h3 class="text-danger fw-bold">QuAnDØ v mERda FeDEu,</h3>
-        <p class="fst-italic mb-3">VoCê CarreGaVa ALgumAs trAlhas</p>
+    <main class="row d-flex justify-content-center mt-3">
+        <div class="col-12 col-lg-8 col-xl-6 p-3 rounded-5 bg-yellow">
 
-        <div class="bg-pink text-white py-2 px-3 mb-3 rounded d-flex justify-content-center align-items-center flex-wrap gap-2">
-          🍴 <span>[3 dias]</span> de alimentos com água <strong>[não potável]</strong>
+            <!-- Botão -->
+            <button class="btn bg-magenta bg-hover-red rounded-5 mb-3 p- w-100">
+                <div class="fw-bold text-white fs-3"><i class="bi bi-person-fill-add"></i></div>
+            </button>
+
+            <!-- Habilidades -->
+            <h2 class="text-blue fw-bold fs-1 mb-3">Habilidades</h2>
+            <div class="text-dark mb-3">
+                <p class="fw-bold fs-2">Agilidade<span class="text-green">[<span id="agi">X</span>]</span></p>
+                <p class="fw-bold fs-2">Físico<span class="text-green">[<span id="fis">X</span>]</span></p>
+                <p class="fw-bold fs-2">Mental<span class="text-green">[<span id="men">X</span>]</span></p>
+            </div>
+
+            <!-- Pontos de Vida -->
+            <div class="bg-blue text-cyan fw-bold fs-2 d-flex justify-content-between align-items-center pt-4 pb-0 ps-4 pe-1">
+                <div>
+                    <span>Pontos de Vida <span class="text-lightblue">&gt;</span></span>
+                </div>
+                <div class="d-flex flex-column">
+                    <span class="fs-6">2d6(<span id="vida1">X</span>)</span>
+                    <span class="fs-000">[<span id="vida2">X</span>]</span>
+                </div>
+            </div>
+
+            <!-- Carga -->
+            <div class="bg-black text-pink p-3 d-flex justify-content-around align-items-center mb-4 rounded">
+                <div class="fs-2 fw-bold">[11]</div>
+                <div class="text-start">
+                    <p class="fw-bold mb-0">CaPAciDaDe de CARGa</p>
+                    <small>Sujeito a penalidade progressiva ao ultrapassar a carga.<br>Máximo(22)</small>
+                </div>
+            </div>
+
+            <!-- Inventário -->
+            <div class="text-dark">
+                <h3 class="text-danger fw-bold">QuAnDØ v mERda FeDEu,</h3>
+                <p class="fst-italic mb-3">VoCê CarreGaVa ALgumAs trAlhas</p>
+
+                <div
+                    class="bg-pink text-white py-2 px-3 mb-3 rounded d-flex justify-content-center align-items-center flex-wrap gap-2">
+                    🍴 <span>[3 dias]</span> de alimentos com água <strong>[não potável]</strong>
+                </div>
+
+                <div class="border-top border-2 border-dark py-2 text-start">
+                    <span class="fw-bold text-brown">ROUPAS:</span> Traje militar, coturnos
+                </div>
+
+                <div class="border-top border-2 border-dark py-2 text-start">
+                    <span class="fw-bold text-danger">DEFESA:</span> Ombreiras de borracha, capacete de samurai
+                </div>
+
+                <div class="border-top border-2 border-dark py-2 text-start">
+                    <span class="fw-bold text-warning">ARMA:</span> Garrafa de vidro, torradeira
+                </div>
+            </div>
         </div>
+    </main>
 
-        <div class="border-top border-2 border-dark py-2 text-start">
-          <span class="fw-bold text-brown">ROUPAS:</span> Traje militar, coturnos
-        </div>
-
-        <div class="border-top border-2 border-dark py-2 text-start">
-          <span class="fw-bold text-danger">DEFESA:</span> Ombreiras de borracha, capacete de samurai
-        </div>
-
-        <div class="border-top border-2 border-dark py-2 text-start">
-          <span class="fw-bold text-warning">ARMA:</span> Garrafa de vidro, torradeira
-        </div>
-      </div>
-    </div>
-  </main>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

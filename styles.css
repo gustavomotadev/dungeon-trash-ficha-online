@@ -1,32 +1,129 @@
+* {
+    --color-yellow: #ffff00;
+    --color-magenta: #ff00ff;
+    --color-blue: #0000ff;
+    --color-green: #00ff00;
+    --color-cyan: #00ffff;
+    --color-black: #000000;
+    --color-violet: #7700ff;
+    --color-crimson: #770000;
+    --color-red: #ff0000;
+    --color-lightblue: #7777ff;
+}
+
+.text-yellow {
+    color: var(--color-yellow);
+}
+
+.text-magenta {
+    color: var(--color-magenta);
+}
+
+.text-blue {
+    color: var(--color-blue);
+}
+
+.text-green {
+    color: var(--color-green);
+}
+
+.text-cyan {
+    color: var(--color-cyan);
+}
+
+.text-lightblue {
+    color: var(--color-lightblue);
+}
+
+.bg-yellow {
+    background-color: var(--color-yellow);
+}
+
+.bg-magenta {
+    background-color: var(--color-magenta);
+}
+
+.bg-blue {
+    background-color: var(--color-blue);
+}
+
+.bg-hover-red:hover {
+    background-color: var(--color-red);
+}
+
 /* ===== COLOR PALETTE ===== */
-.text-pink { color: #ff3399 !important; }
+/* .text-pink { color: #ff3399 !important; }
 .text-cyan { color: #00ffff !important; }
 .text-brown { color: #993300 !important; }
 .bg-pink { background-color: #c0007f !important; }
-.bg-blue { background-color: #0000aa !important; }
+.bg-blue { background-color: #0000aa !important; } */
 
 /* ===== GENERAL ===== */
 body {
   font-family: 'Courier New', monospace;
-  background: linear-gradient(to bottom, #111, #444);
 }
 
-.ficha {
+.bg-custom-gradient {
+
+    background: linear-gradient(to bottom, #000, #777);
+}
+
+.fs-0 {
+    font-size: 2.0rem;
+}
+
+.fs-00 {
+    font-size: 2.5rem;
+}
+
+.fs-000 {
+    font-size: 3.0rem;
+}
+
+@media (min-width: 576px) {
+    .fs-0 {
+        font-size: 2.75rem;
+    }
+
+    .fs-00 {
+        font-size: 3.25rem;
+    }
+
+    .fs-000 {
+        font-size: 3.75rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .fs-0 {
+        font-size: 3.5rem;
+    }
+
+    .fs-00 {
+        font-size: 4.0rem;
+    }
+
+    .fs-000 {
+        font-size: 4.5rem;
+    }
+}
+
+/* .ficha {
   background-color: #ffff00;
   max-width: 480px;
-}
+} */
 
 /* ===== TYPOGRAPHY ===== */
-h1, h2, h3, p, span {
+/* h1, h2, h3, p, span {
   letter-spacing: 1px;
-}
+} */
 
 /* ===== SPACING AND RADIUS ===== */
-.rounded-4 {
+/* .rounded-4 {
   border-radius: 2rem !important;
-}
+} */
 
 /* ===== CUSTOM COLORS ===== */
-.text-warning { color: #ffff00 !important; }
+/* .text-warning { color: #ffff00 !important; }
 .text-danger { color: #990000 !important; }
-.text-success { color: #00ff00 !important; }
+.text-success { color: #00ff00 !important; } */
