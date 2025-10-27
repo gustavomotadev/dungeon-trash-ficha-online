@@ -65,16 +65,8 @@
     background-color: var(--color-red);
 }
 
-/* ===== COLOR PALETTE ===== */
-/* .text-pink { color: #ff3399 !important; }
-.text-cyan { color: #00ffff !important; }
-.text-brown { color: #993300 !important; }
-.bg-pink { background-color: #c0007f !important; }
-.bg-blue { background-color: #0000aa !important; } */
-
-/* ===== GENERAL ===== */
 body {
-  font-family: 'Courier New', monospace;
+    font-family: 'Courier New', monospace;
 }
 
 .bg-custom-gradient {
@@ -125,23 +117,3 @@ body {
         font-size: 4.5rem;
     }
 }
-
-/* .ficha {
-  background-color: #ffff00;
-  max-width: 480px;
-} */
-
-/* ===== TYPOGRAPHY ===== */
-/* h1, h2, h3, p, span {
-  letter-spacing: 1px;
-} */
-
-/* ===== SPACING AND RADIUS ===== */
-/* .rounded-4 {
-  border-radius: 2rem !important;
-} */
-
-/* ===== CUSTOM COLORS ===== */
-/* .text-warning { color: #ffff00 !important; }
-.text-danger { color: #990000 !important; }
-.text-success { color: #00ff00 !important; } */
