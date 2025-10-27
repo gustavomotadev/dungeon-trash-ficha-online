@@ -9,6 +9,7 @@
     --color-crimson: #991900;
     --color-red: #ff003f;
     --color-lightblue: #3fb2ff;
+    --color-gray: #666666;
 }
 
 .text-yellow {
@@ -145,6 +146,10 @@ a:hover {
 
 a:visited {
     color: var(--color-violet);
+}
+
+button:disabled, button:disabled:hover {
+    background-color: var(--color-gray);
 }
 
 @media (min-width: 576px) {
