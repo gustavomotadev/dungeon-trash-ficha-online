@@ -32,9 +32,17 @@
         <div class="col-12 col-lg-8 col-xl-6 p-3 rounded-5 bg-yellow">
 
             <!-- Botão -->
-            <button class="bg-magenta text-white-custom text-hover-yellow bg-active-red border-0 rounded-5 mt-1 mb-3 px-2 py-1 w-100">
-                <div class="fw-bold fs-3"><i class="bi bi-person-fill-add"></i> Gerar</div>
-            </button>
+             <div class="input-group row m-auto mb-4">
+                 <button class="col-12 bg-magenta text-white-custom text-hover-yellow bg-active-red border-0 rounded-5 rounded-bottom-0 px-0 py-1">
+                     <div class="fw-bold fs-3"><i class="bi bi-person-fill-add"></i> Gerar</div>
+                 </button>
+                 <select class="col-12 form-select fs-5 fw-bold text-center border-0 rounded-5 rounded-top-0 px-0 py-2" id="classe">
+                    <option selected>Sem Classe</option>
+                    <option value="1">Forjado no Miasma</option>
+                    <option value="2">Senhor do Lixo</option>
+                    <option value="3">Subversivo da Podridão</option>
+                </select>
+             </div>
 
             <!-- Habilidades -->
             <h2 class="text-blue fw-bold fs-1 mb-3">Habilidades</h2>
@@ -51,7 +59,7 @@
                     <span class="fs-2">Pontos de Vida <span class="text-lightblue">&gt;</span></span>
                 </div>
                 <div class="d-flex flex-column">
-                    <span class="fs-6">2d6(<span id="vida1">X</span>)</span>
+                    <span class="fs-6"><span id="vida-dados">2</span>d6(<span id="vida1">X</span>)</span>
                     <span class="fs-000">[<span id="vida2">X</span>]</span>
                 </div>
             </div>
