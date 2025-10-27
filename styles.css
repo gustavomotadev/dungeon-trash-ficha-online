@@ -49,6 +49,10 @@
     color: var(--color-red);
 }
 
+.text-white-custom {
+    color: #ffffff;
+}
+
 .bg-yellow {
     background-color: var(--color-yellow);
 }
@@ -66,6 +70,14 @@
 }
 
 .bg-hover-red:hover {
+    background-color: var(--color-red);
+}
+
+.text-hover-yellow:hover {
+    color: var(--color-yellow);
+}
+
+.bg-active-red:active {
     background-color: var(--color-red);
 }
 
@@ -97,6 +109,10 @@ body {
 
 .opacity-50 {
     opacity: 0.5;
+}
+
+.fs-7 {
+    font-size: 0.9rem;
 }
 
 @media (min-width: 576px) {
