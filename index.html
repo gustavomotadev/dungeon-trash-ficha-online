@@ -32,12 +32,40 @@
         <div class="col-12 col-lg-8 col-xl-6 p-3 rounded-5 bg-yellow">
 
             <!-- Botão -->
-             <div class="input-group row m-auto mb-4">
-                 <button class="col-12 bg-magenta text-white-custom text-hover-yellow bg-active-red border-0 rounded-5 rounded-bottom-0 px-0 py-1">
-                     <div class="fw-bold fs-3"><i class="bi bi-person-fill-add"></i> Gerar</div>
-                 </button>
-                 <select class="col-12 form-select fs-5 fw-bold text-center border-0 rounded-5 rounded-top-0 px-0 py-2" id="classe">
-                    <option selected>Sem Classe</option>
+            <button class="col-12 bg-magenta text-white-custom text-hover-yellow bg-active-red border-0 rounded-5 px-0 py-1 mb-4">
+                <span class="fw-bold fs-3"><i class="bi bi-person-fill-add"></i> Gerar</span>
+            </button>
+
+             <div class="input-group row m-auto">
+                 <div class="col-12 bg-violet text-white border-0 px-0 py-1">
+                     <span class="fw-bold fs-3">Classe</span>
+                 </div>
+                 <select class="col-12 form-select fs-5 fw-bold text-center bg-black text-violet border-0 rounded-0 px-0 py-2" id="pericia">
+                    <option value="sem" selected>Sem Classe</option>
+                    <option value="forjado">Forjado no Miasma</option>
+                    <option value="senhor">Senhor do Lixo</option>
+                    <option value="subversivo">Subversivo da Podridão</option>
+                </select>
+             </div>
+
+             <div class="input-group row m-auto" id="perito" hidden>
+                 <div class="col-12 bg-violet text-white border-0 px-0 py-1">
+                     <span class="fw-bold fs-3">Perito em</span>
+                 </div>
+                 <select class="col-12 form-select fs-5 fw-bold text-center bg-black text-violet border-0 rounded-0 px-0 py-2" id="pericia">
+                    <option value="0" selected>Sem Classe</option>
+                    <option value="1">Forjado no Miasma</option>
+                    <option value="2">Senhor do Lixo</option>
+                    <option value="3">Subversivo da Podridão</option>
+                </select>
+             </div>
+
+             <div class="input-group row m-auto" id="tocado" hidden>
+                 <div class="col-12 bg-violet text-white border-0 px-0 py-1">
+                     <span class="fw-bold fs-3">Tocado por</span>
+                 </div>
+                 <select class="col-12 form-select fs-5 fw-bold text-center bg-black text-violet border-0 rounded-0 px-0 py-2" id="classe">
+                    <option value="0" selected>Sem Classe</option>
                     <option value="1">Forjado no Miasma</option>
                     <option value="2">Senhor do Lixo</option>
                     <option value="3">Subversivo da Podridão</option>
@@ -45,7 +73,7 @@
              </div>
 
             <!-- Habilidades -->
-            <h2 class="text-blue fw-bold fs-1 mb-3">Habilidades</h2>
+            <h2 class="text-blue fw-bold fs-1 mt-4 mb-3">Habilidades</h2>
             <div class="text-black mb-3">
                 <p class="fw-bold fs-2">Agilidade<span class="text-green">[<span id="agi">X</span>]</span></p>
                 <p class="fw-bold fs-2">Físico<span class="text-green">[<span id="fis">X</span>]</span></p>
@@ -54,7 +82,7 @@
 
             <!-- Pontos de Vida -->
             <div
-                class="bg-blue text-cyan fw-bold d-flex justify-content-between align-items-center pt-3 pb-0 ps-3 pe-1 pt-sm-4 ps-sm-4">
+                class="bg-blue text-cyan fw-bold d-flex justify-content-between align-items-center pt-3 pb-2 ps-3 pe-2 pt-sm-4 ps-sm-4">
                 <div>
                     <span class="fs-2">Pontos de Vida <span class="text-lightblue">&gt;</span></span>
                 </div>
@@ -123,6 +151,7 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

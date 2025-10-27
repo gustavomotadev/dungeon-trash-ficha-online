@@ -69,6 +69,26 @@
     background-color: var(--color-red);
 }
 
+.bg-violet {
+    background-color: var(--color-violet);
+}
+
+.bg-lightblue {
+    background-color: var(--color-lightblue);
+}
+
+.bg-cyan {
+    background-color: var(--color-cyan);
+}
+
+.bg-green {
+    background-color: var(--color-green);
+}
+
+.bg-crimson {
+    background-color: var(--color-crimson);
+}
+
 .bg-hover-red:hover {
     background-color: var(--color-red);
 }
