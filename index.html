@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles2.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="container-md bg-custom-gradient text-center p-3 d-flex flex-column">
@@ -19,8 +19,8 @@
     <header class="row mb-3 d-flex justify-content-center">
         <div class="col-12 col-lg-8 col-xl-6">
             <h1 class="text-yellow fw-bold fs-1 m-0 mb-3">Dungeon Trash</h1>
-            <p class="text-magenta fs-6 m-0">
-                Sobreviva à podridão em um mundo devastado pela poluição em Dungeon Trash. Um hack de Mork borg com regras
+            <p class="text-magenta fs-6 fw-bold m-0">
+                Sobreviva à podridão em um mundo devastado pela poluição em Dungeon Trash. Um hack de Mork Borg com regras
                 leves, porém fatal. Confira mais informações em <a
                     href="https://www.instagram.com/dungeons.e.dados">Dungeons & Dados</a>.
             </p>
@@ -31,22 +31,22 @@
         <div class="col-12 col-lg-8 col-xl-6 p-3 rounded-5 bg-yellow">
 
             <!-- Botão -->
-            <button class="btn bg-magenta bg-hover-red rounded-5 mb-3 p- w-100">
+            <button class="btn bg-magenta bg-hover-red rounded-5 mt-1 mb-3 px-2 py-1 w-100">
                 <div class="fw-bold text-white fs-3"><i class="bi bi-person-fill-add"></i></div>
             </button>
 
             <!-- Habilidades -->
             <h2 class="text-blue fw-bold fs-1 mb-3">Habilidades</h2>
-            <div class="text-dark mb-3">
+            <div class="text-black mb-3">
                 <p class="fw-bold fs-2">Agilidade<span class="text-green">[<span id="agi">X</span>]</span></p>
                 <p class="fw-bold fs-2">Físico<span class="text-green">[<span id="fis">X</span>]</span></p>
                 <p class="fw-bold fs-2">Mental<span class="text-green">[<span id="men">X</span>]</span></p>
             </div>
 
             <!-- Pontos de Vida -->
-            <div class="bg-blue text-cyan fw-bold fs-2 d-flex justify-content-between align-items-center pt-4 pb-0 ps-4 pe-1">
+            <div class="bg-blue text-cyan fw-bold d-flex justify-content-between align-items-center pt-3 pb-0 ps-3 pe-1 pt-sm-4 ps-sm-4">
                 <div>
-                    <span>Pontos de Vida <span class="text-lightblue">&gt;</span></span>
+                    <span class="fs-2">Pontos de Vida <span class="text-lightblue">&gt;</span></span>
                 </div>
                 <div class="d-flex flex-column">
                     <span class="fs-6">2d6(<span id="vida1">X</span>)</span>
@@ -55,34 +55,39 @@
             </div>
 
             <!-- Carga -->
-            <div class="bg-black text-pink p-3 d-flex justify-content-around align-items-center mb-4 rounded">
-                <div class="fs-2 fw-bold">[11]</div>
-                <div class="text-start">
-                    <p class="fw-bold mb-0">CaPAciDaDe de CARGa</p>
-                    <small>Sujeito a penalidade progressiva ao ultrapassar a carga.<br>Máximo(22)</small>
+            <div class="bg-black text-magenta fw-bold d-flex justify-content-between align-items-center pt-2 pb-3 ps-3 pe-3 ps-sm-2 pe-sm-4">
+                <div class="d-flex flex-column">
+                    <span class="fs-000">[<span id="carga1">X</span>]</span>
+                    <span class="fs-6">Máximo(<span id="carga2">X</span>)</span>
+                </div>
+                <div class="d-flex flex-column">
+                    <span class="fs-2">Capacidade de Carga</span>
+                    <span class="fs-6 text-violet">Sujeito a penalidade progressiva ao utrapassar a carga</span>
                 </div>
             </div>
 
             <!-- Inventário -->
-            <div class="text-dark">
-                <h3 class="text-danger fw-bold">QuAnDØ v mERda FeDEu,</h3>
-                <p class="fst-italic mb-3">VoCê CarreGaVa ALgumAs trAlhas</p>
-
-                <div
-                    class="bg-pink text-white py-2 px-3 mb-3 rounded d-flex justify-content-center align-items-center flex-wrap gap-2">
-                    🍴 <span>[3 dias]</span> de alimentos com água <strong>[não potável]</strong>
+            <div class="text-black mt-3 mb-3">
+                <div class="text-crimson fw-bold fs-4 mb-2">
+                    <p class="m-0">Quando a merda fedeu,</p>
+                    <p class="m-0">Você carregava algumas tralhas</p>
                 </div>
 
-                <div class="border-top border-2 border-dark py-2 text-start">
-                    <span class="fw-bold text-brown">ROUPAS:</span> Traje militar, coturnos
+                <div class="bg-red text-white fw-bold fs-6 d-flex align-items-center p-2 mb-2">
+                    <span class="text-nowrap pe-2"><i class="bi bi-fork-knife fs-3"></i><i class="bi bi-forward-fill fs-3"></i></span>
+                    <span>[<span id="comida-agua">X</span> dias] de alimentos com água [<span class="agua-suja" hidden>não </span>potável]</span>
                 </div>
 
-                <div class="border-top border-2 border-dark py-2 text-start">
-                    <span class="fw-bold text-danger">DEFESA:</span> Ombreiras de borracha, capacete de samurai
+                <div class="border-top-0 border-start-0 border-end-0 border-3 border-black border-dashed p-3 text-start fw-bold fs-6">
+                    <span><span class="text-crimson">ROUPAS:</span> <span id="roupas">Traje militar, coturnos</span></span>
                 </div>
 
-                <div class="border-top border-2 border-dark py-2 text-start">
-                    <span class="fw-bold text-warning">ARMA:</span> Garrafa de vidro, torradeira
+                <div class="border-top-0 border-start-0 border-end-0 border-3 border-black border-dashed p-3 text-start fw-bold fs-6">
+                    <span><span class="text-crimson">DEFESAS:</span> <span id="defesa">Ombreiras de borracha, capacete de samurai</span></span>
+                </div>
+
+                <div class="border-top-0 border-start-0 border-end-0 border-3 border-black border-dashed p-3 text-start fw-bold fs-6">
+                    <span><span class="text-crimson">ARMAS:</span> <span id="armas">Garrafa de vidro, torradeira</span></span>
                 </div>
             </div>
         </div>

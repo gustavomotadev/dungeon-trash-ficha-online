@@ -1,14 +1,14 @@
 * {
-    --color-yellow: #ffff00;
-    --color-magenta: #ff00ff;
-    --color-blue: #0000ff;
-    --color-green: #00ff00;
-    --color-cyan: #00ffff;
+    --color-yellow: #fffa00;
+    --color-magenta: #d8209b;
+    --color-blue: #0000d8;
+    --color-green: #008200;
+    --color-cyan: #26ff92;
     --color-black: #000000;
-    --color-violet: #7700ff;
-    --color-crimson: #770000;
-    --color-red: #ff0000;
-    --color-lightblue: #7777ff;
+    --color-violet: #bf00ff;
+    --color-crimson: #991900;
+    --color-red: #ff003f;
+    --color-lightblue: #3fb2ff;
 }
 
 .text-yellow {
@@ -33,6 +33,16 @@
 
 .text-lightblue {
     color: var(--color-lightblue);
+
+}
+
+.text-violet {
+    color: var(--color-violet);
+
+}
+
+.text-crimson {
+    color: var(--color-crimson);
 }
 
 .bg-yellow {
@@ -45,6 +55,10 @@
 
 .bg-blue {
     background-color: var(--color-blue);
+}
+
+.bg-red {
+    background-color: var(--color-red);
 }
 
 .bg-hover-red:hover {
@@ -78,6 +92,10 @@ body {
 
 .fs-000 {
     font-size: 3.0rem;
+}
+
+.border-dashed {
+    border-style: dashed;
 }
 
 @media (min-width: 576px) {
