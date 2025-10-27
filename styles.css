@@ -45,6 +45,10 @@
     color: var(--color-crimson);
 }
 
+.text-red {
+    color: var(--color-red);
+}
+
 .bg-yellow {
     background-color: var(--color-yellow);
 }
@@ -71,7 +75,8 @@ body {
 
 .bg-custom-gradient {
 
-    background: linear-gradient(to bottom, #000, #777);
+    /* background: linear-gradient(to bottom, #000, #777); */
+    background-color: #000000;
 }
 
 .fs-0 {
@@ -88,6 +93,10 @@ body {
 
 .border-dashed {
     border-style: dashed;
+}
+
+.opacity-50 {
+    opacity: 0.5;
 }
 
 @media (min-width: 576px) {
