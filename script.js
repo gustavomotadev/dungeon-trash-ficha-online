@@ -100,7 +100,7 @@ function gerarPersonagem(tabelas) {
         vida: vida, carga_padrao: carga_padrao,
         carga_maxima: carga_maxima, comida_agua: comida_agua,
         agua_suja: agua_suja, roupas: roupas,
-        defesas: defesas, armas: armas
+        defesas: defesas, armas: armas, classe: classe
     };
 
     console.debug(personagem);
@@ -129,11 +129,64 @@ function verificarTabelas(tabelas) {
     return true;
 }
 
+function preencherPersonagem(tabelas) {
+
+    const personagem = gerarPersonagem(tabelas);
+
+    // esconder e mostrar elementos de classe
+    if (personagem.classe === 'senhor') {
+
+        document.getElementById('perito').hidden = false;
+        document.getElementById('tocado').hidden = true;
+
+    } else if (personagem.classe === 'subversivo') {
+
+        document.getElementById('perito').hidden = true;
+        document.getElementById('tocado').hidden = false;
+
+    } else {
+
+        document.getElementById('perito').hidden = true;
+        document.getElementById('tocado').hidden = true;
+    }
+
+    // preencher atributos
+    document.getElementById('agilidade').textContent = String(personagem.agilidade);
+    document.getElementById('fisico').textContent = String(personagem.fisico);
+    document.getElementById('mental').textContent = String(personagem.mental);
+
+    //preencher vida
+    let dadosVida = 2;
+    if (personagem.classe === 'forjado') dadosVida = 3;
+    document.getElementById('vida-dados').textContent = String(dadosVida);
+    document.getElementById('vida-rolagem').textContent = String(personagem.rolagem_vida);
+    document.getElementById('vida-total').textContent = String(personagem.vida);
+
+    //preencher carga
+    document.getElementById('carga-padrao').textContent = String(personagem.carga_padrao);
+    document.getElementById('carga-maxima').textContent = String(personagem.carga_maxima);
+
+    //preencher comida e agua
+    document.getElementById('comida-agua').textContent = String(personagem.comida_agua);
+    if (personagem.agua_suja) {
+        document.getElementById('agua-suja').hidden = false;
+    } else {
+        document.getElementById('agua-suja').hidden = true;
+    }
+
+    //preencher inventário
+    document.getElementById('roupas').textContent = personagem.roupas;
+    document.getElementById('defesas').textContent = personagem.defesas;
+    document.getElementById('armas').textContent = personagem.armas;
+}
+
 function habilitarGeracao(tabelas) {
 
     const botaoGerar = document.getElementById('gerar');
+    const seletorClasse = document.getElementById('classe');
 
-    botaoGerar.addEventListener('click', () => gerarPersonagem(tabelas));
+    botaoGerar.addEventListener('click', () => preencherPersonagem(tabelas));
+    seletorClasse.addEventListener('change', () => preencherPersonagem(tabelas));
 
     botaoGerar.disabled = false;
 }
