@@ -32,24 +32,55 @@ function rolarTabelas(tabelas) {
     return resultado;
 }
 
+function rolagemAtributo(classe) {
+
+    if (classe === 'sem') {
+
+        const rolagem1 = d(6);
+        const rolagem2 = d(6);
+        const rolagem3 = d(6);
+        const rolagem4 = d(6);
+
+        return rolagem1 + rolagem2 + rolagem3 + rolagem4 - Math.min(
+            rolagem1, rolagem2, rolagem3, rolagem4
+        );
+
+    } else {
+
+        return d(6) + d(6) + d(6);
+    }
+}
+
+function rolagemVida(classe) {
+
+    if (classe === 'forjado') {
+
+        return d(6) + d(6) + d(6);
+
+    } else {
+
+        return d(6) + d(6);
+    }
+}
+
 function gerarPersonagem(tabelas) {
 
     const classe = document.getElementById('classe').value;
     console.debug(classe);
 
-    const rolagem_agilidade = d(6) + d(6) + d(6);
+    const rolagem_agilidade = rolagemAtributo(classe);
     const agilidade = modificador(rolagem_agilidade);
     console.log(rolagem_agilidade, agilidade);
 
-    const rolagem_fisico = d(6) + d(6) + d(6);
+    const rolagem_fisico = rolagemAtributo(classe);
     const fisico = modificador(rolagem_fisico);
     console.log(rolagem_fisico, fisico);
 
-    const rolagem_mental = d(6) + d(6) + d(6);
+    const rolagem_mental = rolagemAtributo(classe);
     const mental = modificador(rolagem_mental);
     console.log(rolagem_mental, mental);
 
-    const rolagem_vida = d(6) + d(6);
+    const rolagem_vida = rolagemVida(classe);
     const vida = rolagem_vida + agilidade + fisico + mental;
     console.log(rolagem_vida, vida);
 
