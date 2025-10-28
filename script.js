@@ -39,7 +39,7 @@ function interpretarDados(texto) {
 
 function rolarTabelas(tabelas) {
 
-    console.debug(tabelas);
+    //console.debug(tabelas);
 
     const roupas = interpretarDados(sortearTabela(tabelas["roupas"]));
     const defesas = interpretarDados(sortearTabela(tabelas["defesas"]));
@@ -47,7 +47,7 @@ function rolarTabelas(tabelas) {
 
     const resultado = { roupas: roupas, defesas: defesas, armas: armas }
 
-    console.log(resultado);
+    //console.debug(resultado);
 
     return resultado;
 }
@@ -86,32 +86,32 @@ function rolagemVida(classe) {
 function gerarPersonagem(tabelas) {
 
     const classe = document.getElementById('classe').value;
-    console.debug(classe);
+    //console.debug(classe);
 
     const rolagem_agilidade = rolagemAtributo(classe);
     const agilidade = modificador(rolagem_agilidade);
-    console.log(rolagem_agilidade, agilidade);
+    //console.debug(rolagem_agilidade, agilidade);
 
     const rolagem_fisico = rolagemAtributo(classe);
     const fisico = modificador(rolagem_fisico);
-    console.log(rolagem_fisico, fisico);
+    //console.debug(rolagem_fisico, fisico);
 
     const rolagem_mental = rolagemAtributo(classe);
     const mental = modificador(rolagem_mental);
-    console.log(rolagem_mental, mental);
+    //console.debug(rolagem_mental, mental);
 
     const rolagem_vida = rolagemVida(classe);
     const vida = rolagem_vida + agilidade + fisico + mental;
-    console.log(rolagem_vida, vida);
+    //console.debug(rolagem_vida, vida);
 
     const carga_padrao = 10 + fisico;
     const carga_maxima = carga_padrao * 2;
-    console.log(carga_padrao, carga_maxima);
+    //console.debug(carga_padrao, carga_maxima);
 
     const comida_agua = d(6);
     const agua_suja = d(2)%2 === 0;
-    console.log(d(2));
-    console.debug(comida_agua, agua_suja);
+    //console.debug(d(2));
+    //console.debug(comida_agua, agua_suja);
 
     const { roupas, defesas, armas } = rolarTabelas(tabelas);
 
@@ -124,7 +124,7 @@ function gerarPersonagem(tabelas) {
         defesas: defesas, armas: armas, classe: classe
     };
 
-    console.debug(personagem);
+    //console.debug(personagem);
 
     return personagem;
 }
