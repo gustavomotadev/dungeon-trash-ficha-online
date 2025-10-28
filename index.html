@@ -28,36 +28,56 @@
                 Sobreviva à podridão em um mundo devastado pela poluição em Dungeon Trash. Um hack de Mork Borg com
                 regras
                 leves, porém fatal. Confira mais informações em <a
-                    href="https://www.instagram.com/dungeons.e.dados">@dungeons.e.dados <i class="bi bi-instagram"></i></a>
+                    href="https://www.instagram.com/dungeons.e.dados">@dungeons.e.dados <i
+                        class="bi bi-instagram"></i></a>
             </p>
         </div>
     </header>
 
     <main class="row d-flex justify-content-center mt-3 mb-3">
-        <div class="col-12 col-lg-8 col-xl-6 p-3 rounded-5 bg-yellow">
 
-            <!-- Botão -->
-            <button class="col-12 bg-magenta text-white-custom text-hover-yellow bg-active-red border-0 rounded-5 px-0 py-1 mb-4" id="gerar" disabled>
-                <span class="fw-bold fs-3"><i class="bi bi-person-fill-add"></i> Gerar</span>
-            </button>
+        <!-- Botão -->
+        <div class="col-12 row m-0 p-0">
+            <div class="col-12 col-lg-8 col-xl-6 m-0 p-0 mb-4 px-3 mx-auto">
+                <div class="row m-0 p-0 gap-3 mx-auto">
+                    <div class="col-12 col-md-auto flex-grow-1 m-0 p-0">
+                        <button
+                            class="bg-magenta text-white-custom text-hover-yellow bg-active-red border-0 rounded-0 px-0 py-1 w-100"
+                            id="gerar" disabled>
+                            <span class="fw-bold fs-3"><i class="bi bi-person-fill-add"></i> Gerar</span>
+                        </button>
+                    </div>
 
-             <div class="row m-auto">
-                 <div class="col-12 bg-violet text-white border-0 px-0 py-1">
-                     <span class="fw-bold fs-4">Classe</span>
-                 </div>
-                 <select class="col-12 form-select fs-5 fw-bold text-center bg-black text-violet border-0 rounded-0 px-0 py-2" id="classe">
-                    <option value="sem" selected>Sem Classe</option>
-                    <option value="forjado">Forjado no Miasma</option>
-                    <option value="senhor">Senhor do Lixo</option>
-                    <option value="subversivo">Subversivo da Podridão</option>
-                </select>
-             </div>
+                    <div class="col-12 col-md-auto flex-grow-1 m-0 p-0">
+                        <button
+                            class="bg-magenta text-white-custom text-hover-yellow bg-active-red border-0 rounded-0 px-0 py-1 w-100"
+                            id="salvar" disabled>
+                            <span class="fw-bold fs-3"><i class="bi bi-cloud-arrow-down-fill"></i> Salvar</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-             <div class="row m-auto" id="perito" hidden>
-                 <div class="col-12 bg-violet text-white border-0 px-0 py-1">
-                     <span class="fw-bold fs-4">Perito em</span>
-                 </div>
-                 <select class="col-12 form-select fs-5 fw-bold text-center bg-black text-violet border-0 rounded-0 px-0 py-2" id="pericia">
+        <div class="col-12 col-lg-8 col-xl-6 p-3 rounded-0 bg-yellow">
+
+            <div class="bg-violet text-white border-0 px-0 py-1 mt-1">
+                <span class="fw-bold fs-4">Classe</span>
+            </div>
+            <select class="form-select fs-5 fw-bold text-center bg-black text-violet border-0 rounded-0 px-0 py-2"
+                id="classe">
+                <option value="sem" selected>Sem Classe</option>
+                <option value="forjado">Forjado no Miasma</option>
+                <option value="senhor">Senhor do Lixo</option>
+                <option value="subversivo">Subversivo da Podridão</option>
+            </select>
+
+            <div id="perito" hidden>
+                <div class="bg-violet text-white border-0 px-0 py-1">
+                    <span class="fw-bold fs-4">Perito em</span>
+                </div>
+                <select class="form-select fs-5 fw-bold text-center bg-black text-violet border-0 rounded-0 px-0 py-2"
+                    id="pericia">
                     <option value="filtrar-agua" selected>Filtrar Água</option>
                     <option value="mecanica">Mecânica</option>
                     <option value="medicina">Medicina</option>
@@ -71,32 +91,37 @@
                     <option value="cultura">Cultura</option>
                     <option value="lideranca">Liderança</option>
                 </select>
-             </div>
+            </div>
 
-             <div class="row m-auto" id="tocado" hidden>
-                 <div class="col-12 bg-violet text-white border-0 px-0 py-1">
-                     <span class="fw-bold fs-4">Tocado por</span>
-                 </div>
-                 <select class="col-12 form-select fs-5 fw-bold text-center bg-black text-violet border-0 rounded-0 px-0 py-2" id="tocado">
+            <div id="tocado" hidden>
+                <div class="bg-violet text-white border-0 px-0 py-1">
+                    <span class="fw-bold fs-4">Tocado por</span>
+                </div>
+                <select class="form-select fs-5 fw-bold text-center bg-black text-violet border-0 rounded-0 px-0 py-2"
+                    id="tocado">
                     <option value="putrido" selected>Pútrido</option>
                     <option value="toxion">Tóxion</option>
                     <option value="hidrotox">Hidrotox</option>
                 </select>
-             </div>
+            </div>
 
             <!-- Habilidades -->
             <h2 class="text-blue text-trash fw-bold fs-1 mt-4 mb-3">Habilidades</h2>
             <div class="text-black mb-3">
-                <p class="fw-bold fs-2"><span class="text-trash">Agilidade</span><span class="text-green">[<span id="agilidade">X</span>]</span></p>
-                <p class="fw-bold fs-2"><span class="text-trash">Físico</span><span class="text-green">[<span id="fisico">X</span>]</span></p>
-                <p class="fw-bold fs-2"><span class="text-trash">Mental</span><span class="text-green">[<span id="mental">X</span>]</span></p>
+                <p class="fw-bold fs-2"><span class="text-trash">Agilidade</span><span class="text-green">[<span
+                            id="agilidade">X</span>]</span></p>
+                <p class="fw-bold fs-2"><span class="text-trash">Físico</span><span class="text-green">[<span
+                            id="fisico">X</span>]</span></p>
+                <p class="fw-bold fs-2"><span class="text-trash">Mental</span><span class="text-green">[<span
+                            id="mental">X</span>]</span></p>
             </div>
 
             <!-- Pontos de Vida -->
             <div
                 class="bg-blue text-cyan fw-bold d-flex justify-content-between align-items-center pt-3 pb-2 ps-3 pe-2 pt-sm-4 ps-sm-4">
-                <div>
-                    <span class="fs-2"><span class="text-trash">Pontos de Vida</span> <span class="text-lightblue">&gt;</span></span>
+                <div class="me-3">
+                    <span class="fs-2"><span class="text-trash">Pontos de Vida</span> <span
+                            class="text-lightblue">&gt;</span></span>
                 </div>
                 <div class="d-flex flex-column">
                     <span class="fs-6"><span id="vida-dados">2</span>d6(<span id="vida-rolagem">X</span>)</span>
@@ -119,7 +144,7 @@
 
             <!-- Inventário -->
             <div class="text-black mt-3 mb-3">
-                <div class="text-crimson fw-bold fs-4 mb-2">
+                <div class="text-crimson fw-bold fs-4">
                     <p class="m-0 text-trash">Quando a merda fedeu,</p>
                     <p class="m-0 text-trash">Você carregava algumas tralhas</p>
                 </div>
@@ -127,8 +152,8 @@
                 <div class="bg-red text-white fw-bold fs-6 d-flex align-items-center p-2 mb-2">
                     <span class="text-nowrap pe-2"><i class="bi bi-fork-knife fs-3"></i><i
                             class="bi bi-forward-fill fs-3"></i></span>
-                    <span>[<span id="comida-agua">X</span> dias] de alimentos com água [<span id="agua-suja"
-                            hidden>não </span>potável]</span>
+                    <span>[<span id="comida-agua">X</span> dias] de alimentos com água [<span id="agua-suja" hidden>não
+                        </span>potável]</span>
                 </div>
 
                 <div
@@ -152,12 +177,14 @@
     <footer class="row mb-3 d-flex justify-content-center mt-3 mb-3">
         <div class="col-12 col-lg-8 col-xl-6 opacity-50 text-white fs-7 fw-bold">
             <p class="m-0">
-                Feito com <i class="bi bi-heart-fill text-red"></i> por um jogador de Dungeon Trash, mas sem qualquer vínculo oficial. Se der bug, culpe os lagartos mutantes, não os autores do sistema
+                Feito com <i class="bi bi-heart-fill text-red"></i> por um jogador de Dungeon Trash, mas sem qualquer
+                vínculo oficial. Se der bug, culpe os lagartos mutantes, não os autores do sistema
             </p>
             <p class="m-0 mt-3">O visual dessa página foi inspirado em um design de <a
                     href="https://www.instagram.com/ikslafar">@ikslafar <i class="bi bi-instagram"></i></a></p>
             <p class="m-0 mt-3">
-                <a href="https://github.com/gustavomotadev/dungeon-trash-ficha-online">Veja o código no GitHub <i class="bi bi-github"></i></a>
+                <a href="https://github.com/gustavomotadev/dungeon-trash-ficha-online">Veja o código no GitHub <i
+                        class="bi bi-github"></i></a>
             </p>
         </div>
 

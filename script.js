@@ -10,7 +10,7 @@ function modificador(rolagem) {
 }
 
 function d(lados) {
-    return Math.floor(Math.random() * (lados + 1));
+    return Math.floor(Math.random() * (lados)) + 1;
 }
 
 function sortearTabela(tabela) {
@@ -109,7 +109,8 @@ function gerarPersonagem(tabelas) {
     console.log(carga_padrao, carga_maxima);
 
     const comida_agua = d(6);
-    const agua_suja = d(2) > 0;
+    const agua_suja = d(2)%2 === 0;
+    console.log(d(2));
     console.debug(comida_agua, agua_suja);
 
     const { roupas, defesas, armas } = rolarTabelas(tabelas);
