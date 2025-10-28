@@ -233,6 +233,20 @@ function textoTrash(texto, letras, porcentagem) {
 
 function textoTrashPagina(tabelas) {
 
+    const textosTrash = document.querySelectorAll('.text-trash');
+
+    for (texto of textosTrash) {
+
+        if (!('plaintext' in texto.dataset)) {
+            texto.dataset.plaintext = texto.textContent;
+        }
+
+        texto.textContent = textoTrash(texto.dataset.plaintext, tabelas['letras'], 0.4);
+    }
+}
+
+function debug(tabelas) {
+
     const debug = document.getElementById('debug-section');
 
     const p1 = document.createElement('p');
