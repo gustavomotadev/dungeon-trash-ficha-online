@@ -144,7 +144,9 @@ function verificarTabelas(tabelas) {
 
     if (!(('roupas' in tabelas) &&
         ('defesas' in tabelas) &&
-        ('armas' in tabelas))) return false;
+        ('armas' in tabelas) &&
+        ('letras' in tabelas) &&
+        (Object.keys(tabelas['letras']).length === 26))) return false;
 
     return true;
 }
@@ -211,12 +213,69 @@ function habilitarGeracao(tabelas) {
     botaoGerar.disabled = false;
 }
 
+function textoTrash(texto, letras, porcentagem) {
+    return texto.split('').map(ch => {
+
+        if (Math.random() < porcentagem) {
+
+            const upper = ch.toUpperCase();
+            const opcoes = letras[upper];
+            if (opcoes) return opcoes[Math.floor(Math.random() * opcoes.length)];
+            return ch;
+        
+        } else {
+
+            return ch;
+        }
+
+    }).join('');
+}
+
+function textoTrashPagina(tabelas) {
+
+    const debug = document.getElementById('debug-section');
+
+    const p1 = document.createElement('p');
+    const p2 = document.createElement('p');
+    const p3 = document.createElement('p');
+    const p4 = document.createElement('p');
+    const p5 = document.createElement('p');
+    const p6 = document.createElement('p');
+
+    const porcentagem = 0.4;
+
+    p1.textContent = textoTrash('The quick brown fox jumps over the lazy dog', tabelas['letras'], porcentagem);
+    p2.textContent = textoTrash('The five boxing wizards jump quickly', tabelas['letras'], porcentagem);
+    p3.textContent = textoTrash('Sphinx of black quartz, judge my vow', tabelas['letras'], porcentagem);
+    p4.textContent = textoTrash('Waltz, bad nymph, for quick jigs vex', tabelas['letras'], porcentagem);
+    p5.textContent = textoTrash('How quickly daft jumping zebras vex', tabelas['letras'], porcentagem);
+    p6.textContent = textoTrash('Pack my box with five dozen liquor jugs', tabelas['letras'], porcentagem);
+
+    p1.classList.add('fs-6');
+    p2.classList.add('fs-5');
+    p3.classList.add('fs-4');
+    p4.classList.add('fs-3');
+    p5.classList.add('fs-2');
+    p6.classList.add('fs-1');
+
+    debug.appendChild(p1);
+    debug.appendChild(p2);
+    debug.appendChild(p3);
+    debug.appendChild(p4);
+    debug.appendChild(p5);
+    debug.appendChild(p6);
+
+    debug.hidden = false;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     // Code here runs once, after the DOM is loaded
     console.debug('TRASH!');
 
     carregarJSON('tabelas.json').then(resultado => {
         if (resultado.sucesso && verificarTabelas(resultado.dados)) {
+
+            textoTrashPagina(resultado.dados);
 
             habilitarGeracao(resultado.dados);
 
