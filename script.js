@@ -200,6 +200,9 @@ function preencherPersonagem(tabelas) {
     document.getElementById('roupas').textContent = personagem.roupas;
     document.getElementById('defesas').textContent = personagem.defesas;
     document.getElementById('armas').textContent = personagem.armas;
+
+    //alterar texto trash
+    textoTrashPagina(tabelas);
 }
 
 function habilitarGeracao(tabelas) {
@@ -292,6 +295,8 @@ document.addEventListener('DOMContentLoaded', () => {
             textoTrashPagina(resultado.dados);
 
             habilitarGeracao(resultado.dados);
+
+            preencherPersonagem(resultado.dados);
 
         } else {
 
