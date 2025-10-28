@@ -17,13 +17,33 @@ function sortearTabela(tabela) {
     return tabela[Math.floor(Math.random() * tabela.length)];
 }
 
+function numD(num, lados) {
+
+    let acumulador = 0;
+
+    for (let indice = 0; indice < num; indice++) {
+        acumulador += d(lados)
+    }
+
+    return acumulador;
+}
+
+function interpretarDados(texto) {
+
+    const result = texto.replace(/(\d+)[dD](\d+)/g, (match, a, b) => {
+        return numD(Number(a), Number(b));
+    });
+
+    return result;
+}
+
 function rolarTabelas(tabelas) {
 
     console.debug(tabelas);
 
-    const roupas = sortearTabela(tabelas["roupas"]);
-    const defesas = sortearTabela(tabelas["defesas"]);
-    const armas = sortearTabela(tabelas["armas"]);
+    const roupas = interpretarDados(sortearTabela(tabelas["roupas"]));
+    const defesas = interpretarDados(sortearTabela(tabelas["defesas"]));
+    const armas = interpretarDados(sortearTabela(tabelas["armas"]));
 
     const resultado = { roupas: roupas, defesas: defesas, armas: armas }
 
@@ -199,7 +219,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (resultado.sucesso && verificarTabelas(resultado.dados)) {
 
             habilitarGeracao(resultado.dados);
-        
+
         } else {
 
             throw new Error('Problema nas tabelas');
