@@ -286,6 +286,33 @@ function debug(tabelas) {
     debug.hidden = false;
 }
 
+function downloadFromURL(url, filename) {
+
+    const anchor = document.createElement('a');
+    anchor.download = filename;
+    anchor.href = url;
+    anchor.click();
+}
+
+function habilitarSalvamento() {
+
+    const salvar = document.getElementById('salvar');
+
+    salvar.addEventListener('click', () => {
+
+        const ficha = document.getElementById('ficha');
+
+        html2canvas(ficha).then(canvas => {
+
+            const imgDataURL = canvas.toDataURL('image/png');
+
+            downloadFromURL(imgDataURL, 'ficha.png')
+        });
+    });
+
+    salvar.disabled = false;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     // Code here runs once, after the DOM is loaded
     console.debug('TRASH!');
@@ -298,6 +325,8 @@ document.addEventListener('DOMContentLoaded', () => {
             habilitarGeracao(resultado.dados);
 
             preencherPersonagem(resultado.dados);
+
+            habilitarSalvamento();
 
         } else {
 
